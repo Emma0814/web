@@ -1,0 +1,33 @@
+<style media="screen">
+  .change::-webkit-input-placeholder {
+      /* WebKit, Blink, Edge */
+      color: #909;
+  }
+  .change:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #909;
+      opacity: 1;
+  }
+  .change::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #909;
+      opacity: 1;
+  }
+  .change:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #909;
+  }
+  input[type="text"]{
+      display:block;
+      width:300px;
+      padding:5px;
+      margin-bottom:5px;
+      font-size:1.5em;
+  }
+</style>
+
+<input type="text" placeholder="text1" class="change">  
+<input type="text" placeholder="text2">
+<input type="text" placeholder="text3">
+<input type="text" placeholder="text4"  class="change">
+<input type="text" placeholder="text5">
