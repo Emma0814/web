@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        $("#create_pop").hide();
+        var value = sessionStorage.getItem("title");
+        if(value != null && value != ""){
+          $("#titleInput").val(value);
+        } else {
+          sessionStorage.setItem("title", "");
+        }
+      });
+    </script>
+  </body>
+</html>
