@@ -1,0 +1,14 @@
+/** popup center **
+{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:400px;  /* adjust as per your needs */
+  height:400px;   /* adjust as per your needs */
+  margin-left:-200px;   /* negative half of width above */
+  margin-top:-200px;   /* negative half of height above */
+}
+
+/** Notice that if you want your popup to appear on center even when page is 
+    scrolled you will have to use position:fixed instead with the draw back 
+    that it doesn't work in IE6. **/
