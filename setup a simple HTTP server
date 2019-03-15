@@ -1,0 +1,53 @@
+function getJsonObject(path, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                if (success) success(JSON.parse(xhr.responseText));
+            } else {
+                if (error) error(xhr);
+            }
+        }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+}
+
+window.onload = function(){
+  bookList = []; // book list container
+  getJsonObject('data.json', function(data) {
+    bookList = data; // store the book list into bookList
+      console.log(bookList); // print it into console (developer tools)
+      console.log(bookList[0]); // print the first book object into console 
+    },
+    function(xhr) { 
+      console.error(xhr); 
+    }
+  );
+}
+
+
+
+/**
+  Using PHP: 
+  For Mac OS or linux users, your operating system usually has PHP installed so 
+  You do not have to install it. For windows users, you will need to install PHP 
+  Since it is not available by default. After having PHP installed, you first 
+  Open your command line or terminal and navigate to your project directory by 
+  Using "cd" command. Afterwards, you run this command: "php -S localhost:8000" 
+  And it should say "Listening on http://localhost:8000". By running this 
+  Command you can open your project from your browser using this address: 
+  "http://localhost:8000".
+
+  Using Node.js: 
+  You will be using it for upcoming tutorials and you can use it to work on your 
+  Second assignment, so installing Nodejs can serve other purposes. They provide 
+  A UI installer so it is easy to install, you can go to this link: 
+  https://nodejs.org/en/download/. After installing Node.js, open your terminal 
+  (mac/linux) or command prompt (windows) and run this command: 
+  "npm install http-server -g" (put sudo before npm if you are mac/linux users). 
+  If http-server installation is complete, go to your project directory by using 
+  "cd" command and run command "http-server". It will provide you url(s) to access 
+  Your project from your browser, you usually can access your project from this 
+  address: "http://127.0.0.1:8080".
+*/
